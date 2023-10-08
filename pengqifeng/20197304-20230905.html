@@ -1,0 +1,332 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base target="_blank">
+  <title>Homework One</title>
+ <style type="text/css">
+ <span id="xuehao">20197304</span>
+body>div {
+            width: 75%;
+            background-color: white;
+            margin: 0 auto;
+            /*块级元素居中*/
+            overflow: hidden;
+            /*解决上部元素粘连问题*/
+        }
+	
+a{  
+    font-size:30px;
+    padding:15px;
+	background-color:yellow;
+	display:block;
+	margin:20px;
+	text-decoration:none;
+}
+a:link{
+border:3px solid red;
+color:blue;
+background-color blue;
+}
+a:visited{
+color:red;
+background-color green;
+border:8px solid red;
+}
+a:hover{
+color:blue;
+background-color blue;
+border:3px solid blue;
+}
+a:active{
+font-size:50px;
+}
+body{
+
+	border:8px solid red;
+	height:2900px;
+	padding:50px;
+}
+h1{
+    font-size:70px;
+	color:black;
+	text-align:center;
+    font-family:楷体;
+
+}
+h3{
+    font-size:45px; 
+}
+div{
+    font-size:29px;
+	color:black;
+    font-family:楷体;
+}
+
+selector{proper:value;
+ </style>
+ </head>
+ <body>
+ <h1>Linux命令实验报告</h1>
+ <h3>一、简介</h3>
+		  <div>
+1.通过李老师的JavaWeb第一堂课，我学会熟练使用指令对gitbash实现基本操作，也了解到Linus系统。<br>
+2.Git是一个版本控制工具，而Git Bash是在Windows系统中运行 Git命令 的命令行界面工具。 您可以使用Git Bash来管理和操作Git仓库。 当你在Windows系统上安装Git时，它会默认安装Git Bash。<br>
+3.学会本地文件的操作，将文件夹变成本地仓库以及添加文件和提交文件<br>
+		  </div>
+<h3>二、操作步骤</h3>
+<div>
+1．把git bash这个软件装好，保持一个很好的界面，大小的字体合适<br>
+2. 在D盘中的git这个文件夹里面建个人的项目文件夹(在git根目录下创建个人的项目文件夹，如果没有权限，则需要在根目录下拷在其他盘，在进行创建)<br>
+3. 反复的尝试建文件夹，拷贝文件，删除文件，建文件夹LS列出文件。杠代表根目录，在根目录下面可以挂载你的D盘<br>
+4. 用CD的方式进入不同的那个文件夹。点代表当前文件夹，拷贝这些文件<br>
+5. 用history把指令列出来。(在gitbash操作的指令历史记录，导入新的文本文件）<br>
+</div>
+<h3>三、总结</h3>
+<div>
+			我们进入Linux命令行的旅程的开始，其中介绍了shell，一瞥了命令行，以及关于如何启动和结束终端会话的简要课程。我们还看到了如何发布一些简单的命令和执行一些较轻的命令行编辑。我们了解了shell如何处理系统的目录结构以及绝对路径名和相对路径名
+</div>
+
+<h3>三、命令</h3>
+        </div>
+
+        <div id="main">
+            <div>
+                	命令行名称：					功能：<br>
+	1  git config --global<br>
+2  git config --global user.name"feng"<br>
+3  git config --global user.name"3123363345@qq.com"<br>
+4  cd D:<br>
+5  cd Code<br>
+6  cd testgit<br>
+7  cd testgit<br>
+8  pwd<br>
+9  git init<br>
+10  git init<br>
+11  git init
+12  git add readme.txt
+13  git add readme.txt
+14  git commit -m "readme.txt提交"
+15  git config --global user.name"peng"
+16  gti config --flobal user.email"3123363345@qq.com"
+17  git config --global user.email"3123363345@qq.com"
+18  git init
+19  git commit -m "readme.txt提交”
+20  git status
+21  cd /d/code/testgit
+22  git init
+23  ls -a
+24  rm -rf .git
+25  git init
+26  #!/bin/sh
+27  set -e
+28  OS_NAME=$(uname -s)
+29  JB_PRODUCTS="idea clion phpstorm goland pycharm webstorm webide rider datagrip rubymine appcode dataspell gateway jetbrains_client jetbrainsclient studio devecostudio"
+30  KDE_ENV_DIR="${HOME}/.config/plasma-workspace/env"
+31  PROFILE_PATH="${HOME}/.profile"
+32  ZSH_PROFILE_PATH="${HOME}/.zshrc"
+33  PLIST_PATH="${HOME}/Library/LaunchAgents/jetbrains.vmoptions.plist"
+34  if [ $OS_NAME = "Darwin" ]; then   BASH_PROFILE_PATH="${HOME}/.bash_profile"; else   BASH_PROFILE_PATH="${HOME}/.bashrc"; fi
+35  touch "${PROFILE_PATH}"
+36  touch "${BASH_PROFILE_PATH}"
+37  touch "${ZSH_PROFILE_PATH}"
+38  MY_VMOPTIONS_SHELL_NAME="jetbrains.vmoptions.sh"
+39  MY_VMOPTIONS_SHELL_FILE="${HOME}/.${MY_VMOPTIONS_SHELL_NAME}"
+40  rm -rf "${MY_VMOPTIONS_SHELL_FILE}"
+41  if [ $OS_NAME = "Darwin" ]; then   for PRD in $JB_PRODUCTS; do     ENV_NAME=$(echo $PRD | tr '[a-z]' '[A-Z]')"_VM_OPTIONS";          launchctl unsetenv "${ENV_NAME}";   done;    rm -rf "${PLIST_PATH}";    sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    echo 'done.'; else   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    rm -rf "${KDE_ENV_DIR}/${MY_VMOPTIONS_SHELL_NAME}";   echo "done. you'd better log off first!"; fi
+42  #!/bin/sh
+43  set -e
+44  OS_NAME=$(uname -s)
+45  JB_PRODUCTS="idea clion phpstorm goland pycharm webstorm webide rider datagrip rubymine appcode dataspell gateway jetbrains_client jetbrainsclient studio devecostudio"
+46  KDE_ENV_DIR="${HOME}/.config/plasma-workspace/env"
+47  PROFILE_PATH="${HOME}/.profile"
+48  ZSH_PROFILE_PATH="${HOME}/.zshrc"
+49  PLIST_PATH="${HOME}/Library/LaunchAgents/jetbrains.vmoptions.plist"
+50  if [ $OS_NAME = "Darwin" ]; then   BASH_PROFILE_PATH="${HOME}/.bash_profile"; else   BASH_PROFILE_PATH="${HOME}/.bashrc"; fi
+51  touch "${PROFILE_PATH}"
+52  touch "${BASH_PROFILE_PATH}"
+53  touch "${ZSH_PROFILE_PATH}"
+54  MY_VMOPTIONS_SHELL_NAME="jetbrains.vmoptions.sh"
+55  MY_VMOPTIONS_SHELL_FILE="${HOME}/.${MY_VMOPTIONS_SHELL_NAME}"
+56  rm -rf "${MY_VMOPTIONS_SHELL_FILE}"
+57  if [ $OS_NAME = "Darwin" ]; then   for PRD in $JB_PRODUCTS; do     ENV_NAME=$(echo $PRD | tr '[a-z]' '[A-Z]')"_VM_OPTIONS";          launchctl unsetenv "${ENV_NAME}";   done;    rm -rf "${PLIST_PATH}";    sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    echo 'done.'; else   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    rm -rf "${KDE_ENV_DIR}/${MY_VMOPTIONS_SHELL_NAME}";   echo "done. you'd better log off first!"; fi
+58  #!/bin/sh
+59  set -e
+60  OS_NAME=$(uname -s)
+61  JB_PRODUCTS="idea clion phpstorm goland pycharm webstorm webide rider datagrip rubymine appcode dataspell gateway jetbrains_client jetbrainsclient studio devecostudio"
+62  KDE_ENV_DIR="${HOME}/.config/plasma-workspace/env"
+63  PROFILE_PATH="${HOME}/.profile"
+64  ZSH_PROFILE_PATH="${HOME}/.zshrc"
+65  PLIST_PATH="${HOME}/Library/LaunchAgents/jetbrains.vmoptions.plist"
+66  if [ $OS_NAME = "Darwin" ]; then   BASH_PROFILE_PATH="${HOME}/.bash_profile"; else   BASH_PROFILE_PATH="${HOME}/.bashrc"; fi
+67  touch "${PROFILE_PATH}"
+68  touch "${BASH_PROFILE_PATH}"
+69  touch "${ZSH_PROFILE_PATH}"
+70  MY_VMOPTIONS_SHELL_NAME="jetbrains.vmoptions.sh"
+71  MY_VMOPTIONS_SHELL_FILE="${HOME}/.${MY_VMOPTIONS_SHELL_NAME}"
+72  rm -rf "${MY_VMOPTIONS_SHELL_FILE}"
+73  if [ $OS_NAME = "Darwin" ]; then   for PRD in $JB_PRODUCTS; do     ENV_NAME=$(echo $PRD | tr '[a-z]' '[A-Z]')"_VM_OPTIONS";          launchctl unsetenv "${ENV_NAME}";   done;    rm -rf "${PLIST_PATH}";    sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    echo 'done.'; else   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    rm -rf "${KDE_ENV_DIR}/${MY_VMOPTIONS_SHELL_NAME}";   echo "done. you'd better log off first!"; fi
+74  #!/bin/sh
+75  set -e
+76  OS_NAME=$(uname -s)
+77  JB_PRODUCTS="idea clion phpstorm goland pycharm webstorm webide rider datagrip rubymine appcode dataspell gateway jetbrains_client jetbrainsclient studio devecostudio"
+78  KDE_ENV_DIR="${HOME}/.config/plasma-workspace/env"
+79  PROFILE_PATH="${HOME}/.profile"
+80  ZSH_PROFILE_PATH="${HOME}/.zshrc"
+81  PLIST_PATH="${HOME}/Library/LaunchAgents/jetbrains.vmoptions.plist"
+82  if [ $OS_NAME = "Darwin" ]; then   BASH_PROFILE_PATH="${HOME}/.bash_profile"; else   BASH_PROFILE_PATH="${HOME}/.bashrc"; fi
+83  touch "${PROFILE_PATH}"
+84  touch "${BASH_PROFILE_PATH}"
+85  touch "${ZSH_PROFILE_PATH}"
+86  MY_VMOPTIONS_SHELL_NAME="jetbrains.vmoptions.sh"
+87  MY_VMOPTIONS_SHELL_FILE="${HOME}/.${MY_VMOPTIONS_SHELL_NAME}"
+88  rm -rf "${MY_VMOPTIONS_SHELL_FILE}"
+89  if [ $OS_NAME = "Darwin" ]; then   for PRD in $JB_PRODUCTS; do     ENV_NAME=$(echo $PRD | tr '[a-z]' '[A-Z]')"_VM_OPTIONS";          launchctl unsetenv "${ENV_NAME}";   done;    rm -rf "${PLIST_PATH}";    sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '' '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    echo 'done.'; else   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${BASH_PROFILE_PATH}" >/dev/null 2>&1;   sed -i '/___MY_VMOPTIONS_SHELL_FILE="${HOME}\/\.jetbrains\.vmoptions\.sh"; if /d' "${ZSH_PROFILE_PATH}" >/dev/null 2>&1;    rm -rf "${KDE_ENV_DIR}/${MY_VMOPTIONS_SHELL_NAME}";   echo "done. you'd better log off first!"; fi
+90  cd /
+91  1s
+92  ls
+93  md
+94  mkdir qifeng
+95  ls
+96  cd qifeng/
+97  ls /
+98  ls /e
+99  cp /e/sql server/face
+100  cp /e/sql server
+101  cp /Resources
+102  cp /Resources/face
+103  cp --help
+104  cp /Resources/face
+105  vim index.html
+106  ls
+107  cd /
+108  history
+109  rkspace/env"
+110     79  PROFILE_PATH="${HOME}/.profile"
+111  rkspace/env"
+112     79  PROFILE_PATH="${HOME}/.profile"
+113  cd /
+114  ls
+115  md
+116  mkdir qiwfeng
+117  mkdir qifeng
+118  cd qifeng/
+119  ls
+120  vim index.html
+121  cat index.html
+122  ls
+123  '/d/Web js/Learn CSS in One Day and Learn It Well.pdf''/d/Web js/Learn CSS in One Day and Learn It Well.pdf'
+124  cp /e
+125  ls /e
+126  cp /e/Resources
+127  cp --help
+128  ls /e
+129  ls /e/sql\ server/
+130  cp /e/sql\ server/实验八实现数据完整性.docx 
+131  cp /e/sql\ server/实验八实现数据完整性.docx  .
+132  ls
+133  history
+134  history > 20197304
+135  delete 20197304
+136  ls
+137  cd /
+138  cd qifeng/
+139  ls
+140  remove 实验八实现数据完整性.docx 
+141  help
+142  rm 实验八实现数据完整性.docx 
+143  ls
+144  alias
+145  bg
+146  bind
+147  ls
+148  rm 20197304
+149  ls
+150  history > 20197304-20230905.txt
+151  ls
+152  history
+153  help
+154  git init
+155  ls
+156  help
+157  cd
+158  cd qifeng/
+159  cd /qifeng
+160  ls
+161  hash
+162  time
+163  times
+164  read
+165  read
+166  return
+167  return 5
+168  dires -n
+169  caller
+170  help
+171  vim index.html
+172  cd qifeng/
+173  cd /qifeng
+174  cd
+175  cd /qifeng
+176  ls
+177  rm 20197304-20230905.txt 
+178  ls
+179  bg
+180  bind
+181  break
+182  break h
+183  builbin
+184  builbin
+185  popd
+186  hash -lr
+187  for name;r
+188  cd /qifeng
+189  ls
+190  history
+191  cd
+192  cd /qifeng
+193  ls
+194  rm sz.jpg
+195  ls
+196  rm index.html 
+197  ls
+198  cd /qifeng
+199  cl
+200  ls
+201  history
+202  help
+203  cd
+204  cd
+205  cd
+206  cd /qifeng
+207  ls /e
+208  ls /e/Scene\ pictures/
+209  ls /e/Beautiful\ memory/
+210  ls /e/杭州\ 香港picture/
+211  ls /e/杭州\ 香港picture/sz.jpg
+212  cp /e/杭州\ 香港picture/sz.jpg
+213  cp /e/杭州\ 香港picture/sz.jpg .
+214  ls
+215  ls
+216  cd
+217  cd /qifeng
+218  git tag
+219  touch index.html
+220  ls
+221  rm index.html 
+222  ls
+223  rm sz.jpg 
+224  ls
+225  cd
+226  cd /qifeng
+227  ls
+228  history > 20197304-20230905.txt
+            </div>
+        </div>
+
+ </body>
+</html>
+
+
+
