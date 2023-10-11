@@ -1,30 +1,42 @@
-<!doctype html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-
-  <title>Video</title>
- </head>
- <style type="text/css">
-	button{
-	font-size:20px;
-	}
-    body{
-	text-align: center;
-	}
-	
- </style>
-
- <body>
-
-  <video id = "myVideo" width="390" height="290"> </video>
-  <!--元素的名字id-->
-  <div>
-  <button id = "play">Play</button>
-  <button id = "pause">Pause</button>
-  <button id = "next">Next</button>
-  <div>
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放器</title>
+	 <style>
+     button {
+               font-size:2em;
+	           display:inline-block;
+	           margin:2em;
+			   color:darkblue;
+			   border-bottom-color:LightSlateGray;
+	           border-radius:2em; 
+	           display:inline-block;
+	           box-shadow:2px 2px gray;
+			   
+			} 
+	  #css  {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+             }
+	  #css1  {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+             }
+    </style>
+</head>
+<body>
+    <div id="css">
+    <video id="myVideo" width="520" height="450" controls></video><br>
+	</div>
+	<div id="css1">
+	<button onclick="play()">播放</button>
+        <button onclick="pause()">暂停</button>
+        <button onclick="next()">下一个</button>
+	</div>
+	<script>
        var videos = ["http://vjs.zencdn.net/v/oceans.mp4",
 	    "http://ohjdda8lm.bkt.clouddn.com/course/sample1.mp4",                               
 		"https://media.w3.org/2010/05/sintel/trailer.mp4",
@@ -52,6 +64,5 @@
             play();
         }
     </script>
- </body>
-
+</body>
 </html>
