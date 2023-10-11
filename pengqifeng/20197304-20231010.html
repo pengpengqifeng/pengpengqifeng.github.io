@@ -25,42 +25,33 @@
   <button id = "next">Next</button>
   <div>
 <script>
-     
-     var mp4Filers =
-                     ["http://vjs.zencdn.net/v/oceans.mp4",
-		     "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",                               
-		     "https://media.w3.org/2010/05/sintel/trailer.mp4"];
+       var videos = ["http://vjs.zencdn.net/v/oceans.mp4",
+	    "http://ohjdda8lm.bkt.clouddn.com/course/sample1.mp4",                               
+		"https://media.w3.org/2010/05/sintel/trailer.mp4",
+		"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+		"http://vjs.zencdn.net/v/oceans.mp4"
+		];
+					  
+        var i = 0;
+        var videoPlayer = document.getElementById("myVideo");
 
- var myVideo = document.getElementById("myVideo");  
-     myVideo.src = " ";//video/myVideo 函数 路径
-//document 最大的页面本身
+        function play() {
+            videoPlayer.src = videos[i];
+            videoPlayer.play();
+        }
 
-     var i = 0; //初始化
-	 myVideo.src  = mp4Filers[i];
+        function pause() {
+            videoPlayer.pause();
+        }
 
-document.getElementById("play").onclick =function(){
-     myVideo.play();
-	};  
-document.getElementById("pause").onclick=function(){
-     myVideo.pause();
-	};  
-//document.getElementById("pause").onclick=function(){
-//     console.log("点什么?");
-//	}; -->
-document.getElementById("next").onclick =function(){
-	 i++;
-	 if(i == mp4Filers.length){
-		 i = mp4Filers.length-1;//边界问题 最后一个长度超过索引值 -1
-	 }
-     //i++;  //把0个关掉去 逻辑错误
-	 myVideo.src  = mp4Filers[i];
-     myVideo.play();  //设计 
-	};  
-	//mp4Filers[]
-
-	
-	//抽象  异步程序 对对象的事件处理 跟动作交互
-</script>
+        function next() {
+            i++;
+            if (i >= videos.length) {
+                i = 0;
+            }
+            play();
+        }
+    </script>
  </body>
 
 </html>
