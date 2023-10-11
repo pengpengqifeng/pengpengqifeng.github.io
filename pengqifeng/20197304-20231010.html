@@ -36,7 +36,7 @@
 //document 最大的页面本身
 
      var i = 0; //初始化
-	 myVideo.src  = "D:/Download/Git/qifeng/video/" + mp4Filers[i];
+	 myVideo.src  = mp4Filers[i];
 
 document.getElementById("play").onclick =function(){
      myVideo.play();
@@ -53,7 +53,7 @@ document.getElementById("next").onclick =function(){
 		 i = mp4Filers.length-1;//边界问题 最后一个长度超过索引值 -1
 	 }
      //i++;  //把0个关掉去 逻辑错误
-	 myVideo.src  = "D:/Download/Git/qifeng/video/" + mp4Filers[i];
+	 myVideo.src  = mp4Filers[i];
      myVideo.play();  //设计 
 	};  
 	//mp4Filers[]
