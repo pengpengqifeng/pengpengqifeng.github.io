@@ -1,68 +1,110 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>视频播放器</title>
-	 <style>
-     button {
-               font-size:2em;
-	           display:inline-block;
-	           margin:2em;
-			   color:darkblue;
-			   border-bottom-color:LightSlateGray;
-	           border-radius:2em; 
-	           display:inline-block;
-	           box-shadow:2px 2px gray;
-			   
-			} 
-	  #css  {
-               display: flex;
-               justify-content: center;
-               align-items: center;
-             }
-	  #css1  {
-               display: flex;
-               justify-content: center;
-               align-items: center;
-             }
+    <style>
+        html {
+            display: flex;
+            min-height: 80vh;
+            background-color: antiquewhite;
+        }
+
+
+        /* body {
+            background-color: rgb(191, 229, 225);
+            margin: auto;
+            width: 700px;
+            border: 2px solid black;
+            border-radius: 10px;
+            border-color: aqua;
+            cursor: pointer;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          
+        } */
+
+        button {
+            color: #fff;
+            background-color: #da4f49;
+            border: 1px solid #bd362f;
+            font-size: 25px;
+            font-family: '圆体';
+            margin-top: 30px;
+            margin-right: 15px;
+            margin-left: 50px;
+            margin-bottom: 20px;
+            vertical-align: middle;
+            font-size: 30px;
+            font-weight: 800;
+ 
+        }
+
+        #videoPlayer {
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 700px;
+        }
+
+         h1 {
+            text-align: center;
+        }
     </style>
 </head>
-<body>
-    <div id="css">
-    <video id="myVideo" width="520" height="450" controls></video><br>
-	</div>
-	<div id="css1">
-	<button onclick="play()">播放</button>
-        <button onclick="pause()">暂停</button>
-        <button onclick="next()">下一个</button>
-	</div>
-	<script>
-       var videos = ["http://vjs.zencdn.net/v/oceans.mp4",
-	    "http://ohjdda8lm.bkt.clouddn.com/course/sample1.mp4",                               
-		"https://media.w3.org/2010/05/sintel/trailer.mp4",
-		"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
-		"http://vjs.zencdn.net/v/oceans.mp4"
-		];
-					  
-        var i = 0;
-        var videoPlayer = document.getElementById("myVideo");
 
-        function play() {
-            videoPlayer.src = videos[i];
+<body>
+    <h1>MyVideoPlayer</h1>
+    <video id="videoPlayer" width="600px">
+        <source src="1.mp4">
+
+    </video>
+    <div>
+        <button onclick="playVideo()">播放</button>
+        <button onclick="pauseVideo()">暂停</button>
+        <button onclick="previousVideo()">上一个</button>
+        <button onclick="nextVideo()">下一个</button>
+    </div>
+    <script>
+        var videoPlayer = document.getElementById('videoPlayer');
+        var videos = ["1.mp4", "2.mp4", "3.mp4",
+            "4.mp4", "5.mp4", "6.mp4"
+        ]; // 视频文件路径数组
+        var currentVideoIndex = 0; // 当前播放的视频索引
+
+        function playVideo() {
             videoPlayer.play();
         }
 
-        function pause() {
+        function pauseVideo() {
             videoPlayer.pause();
         }
 
-        function next() {
-            i++;
-            if (i >= videos.length) {
-                i = 0;
+        function previousVideo() {
+            if (currentVideoIndex > 0) {
+                currentVideoIndex--;
+            } else {
+                currentVideoIndex = videos.length - 1;
             }
-            play();
+            changeVideoSource();
+        }
+
+        function nextVideo() {
+            if (currentVideoIndex < videos.length - 1) {
+                currentVideoIndex++;
+            } else {
+                currentVideoIndex = 0;
+            }
+            changeVideoSource();
+        }
+
+        function changeVideoSource() {
+            videoPlayer.src = videos[currentVideoIndex];
+            videoPlayer.load();
+            videoPlayer.play();
         }
     </script>
 </body>
+
 </html>
