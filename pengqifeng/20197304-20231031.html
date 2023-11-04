@@ -80,7 +80,7 @@
     var i = 0;
     //获取视频元素
     var video = document.getElementById("myVideo");
-    video.src ="../Homework/"+myVideos[0];
+    video.src ="../pengqifeng/"+myVideos[0];
 
     var play =  document.getElementById("play");
     //视频播放
@@ -123,7 +123,7 @@
         if(i==myVideos.length){
             i=0;
         }
-        video.src ="../Homework/"+myVideos[i];
+        video.src ="../pengqifeng/"+myVideos[i];
         logoDom.textContent = 'NO.' + (i+1) + '共' + myVideos.length;
     };
 
@@ -149,12 +149,12 @@
         if (!isNaN(inputVideoId)){
             if (inputVideoId >= 1 && inputVideoId <= myVideos.length) {
                 i = inputVideoId-1;
-                video.src = "../Homework/" + myVideos[i];
+                video.src = "../pengqifeng/" + myVideos[i];
             } else if(inputVideoId >myVideos.length){
-                video.src = "../Homework/" + myVideos[i];
+                video.src = "../pengqifeng/" + myVideos[i];
             } else{
-                video.src = "../Homework/" + myVideos[0];
-                video.src = "../Homework/" + myVideos[0];
+                video.src = "../pengqifeng/" + myVideos[0];
+                video.src = "../pengqifeng/" + myVideos[0];
             }
         }
         logoDom.textContent = 'NO.' + (i+1) + '共' + myVideos.length;
