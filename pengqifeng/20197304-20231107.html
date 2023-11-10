@@ -1,0 +1,147 @@
+
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>视频播放器</title>
+  <style>
+    body {
+
+    }
+
+    #css {
+      background-color: #FFF  ;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 20px auto;
+      width: 550px;
+      position: relative;
+    }
+
+    #myVideo {
+      border: 1.5px solid #ccc;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #css1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 1.5em;
+      display: inline-block;
+      margin: 10px;
+      color: darkblue;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 2px 2px 2px gray;
+      padding: 10px 20px;
+
+    }
+    input  {
+      font-size:1em;
+      margin:0.5em;
+      background-color:#FFF ;
+      width:15%;
+      height:50px;
+    }
+    #duration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color:white;
+    }
+    #videoNumber{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size:1.5em;
+      border-radius:0.5em;
+    }
+    #currentTime1{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+
+
+      font-size: 1.5em;
+      border-radius:0.5em;
+    }
+  </style>
+</head>
+<body>
+<div id="css">
+  <video id="myVideo" width="600" height="400" controls></video><br>
+  <div id="videoNumber"></div>
+  <div id="currentTime1"></div>
+</div>
+<div id="css1">
+
+  <button onclick="Model.UI.play()">播放</button>
+  <button onclick="Model.UI.pause()">暂停</button>
+  <button onclick="Model.UI.next()">下一个</button>
+
+</div>
+
+
+<div id="duration"></div>
+<script>
+  var Model = {
+    UI: {}
+  };
+  Model.UI.videos = [
+    "../pengqifeng/1.mp4",
+    "../pengqifeng/2.mp4",
+    "../pengqifeng/3.mp4",
+    "../pengqifeng/4.mp4",
+    "../pengqifeng/5.mp4",
+    "../pengqifeng/6.mp4",
+  ];
+  Model.UI.i = 0;
+  Model.UI.videoPlayer = document.getElementById("myVideo");
+  Model.UI.currentTime=document.getElementById("currentTime");
+  Model.UI.videoNumber = document.getElementById("videoNumber");
+  Model.UI.currentTime1 = document.getElementById("currentTime1");
+
+  Model.UI.play = function() {
+    Model.UI.videoPlayer.src = Model.UI.videos[Model.UI.i];
+    Model.UI.videoPlayer.play();
+  }
+
+  Model.UI.pause = function() {
+    Model.UI.videoPlayer.pause();
+  }
+
+  Model.UI.next = function() {
+    Model.UI.i++;
+    if (Model.UI.i >= Model.UI.videos.length) {
+      Model.UI.i = 0;
+    }
+    Model.UI.play();
+  }
+
+  window.setInterval(function(){
+    Model.UI.videoNumber.innerText = "NO." + Model.UI.i+"/"+(Model.UI.videos.length-1);
+    Model.UI.currentTime1.innerText = "Time：" + parseInt(Model.UI.videoPlayer.currentTime.toFixed(2))+"s"+"/" +parseInt(Model.UI.videoPlayer.duration)+"s" ;
+
+  }, 100);
+
+  Model.UI.durationDom=[];
+  for(let i=0;i<8;i++){
+    let tempDom=document.createElement('input');
+    tempDom.type='button';
+    tempDom.value+='No.'+(i+1);
+    Model.UI.durationDom[i]=tempDom;
+    document.getElementById('duration').appendChild(Model.UI.durationDom[i])
+  }
+  for(let i=0;i<8;i++){
+    Model.UI.durationDom[i].onclick=function(){
+      Model.UI.videoPlayer.currentTime=i * Model.UI.videoPlayer.duration/8;
+    };
+  }
+</script>
+</body>
+</html>
