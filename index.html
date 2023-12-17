@@ -127,14 +127,12 @@ document.body.style.height = window.innerHeight + 'px';
 // 设置header部分的动态生成名人名言进行循环
 var saying = ['绝代有佳人，幽居在空谷。', '自云良家子，零落依草木。', '关中昔丧乱，兄弟遭杀戮。'];
 var header = document.getElementById("Header");
-var imgsrc = ['https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0',
-'https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0','https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0','https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0'];
-var img = document.getElementById('Img');
+
 var symbol = ['第一次作业', '第二次作业', '第三次作业', '第四次作业', '第五次作业', '第六次作业', '第七次作业', '第八次作业', '第九次作业', '音视频学习系统', '第十一次作业', '第十二次作业', '第十三次作业', '第十四次作业', '第十五次作业', '第十六次作业'];
 var nav = document.getElementById('Nav');
 var Article = document.getElementById('Article');
 
-var homeworkcontent = ['第一次作业做的是熟练使用指令对gitbash实现基本操作，也了解到Linus系统', '第二次作业是下载videoClips文件到个人文件夹中，用linux命令解包、包文件、列出解包的文件并用浏览器播放解包的视频', '第三次作业是利用grep分类以及重定向符', '第四次作业是熟练运用ping grep cut等指令', '第五次作业是做了个简易的视频播放器', '第六次作业是输入秒数和视频序号，实现当前视频的进度跳转和视频跳转', '第七次作业是显示当前视频播放的时间创建动态div显示当前序列号和总视频数，遮住水印', '第八次作业是实现区域块视频，播放动态添加按钮', '第九次作业是设置全局变量', '第十次作业是计算器', '第十一次是考试，计算器补全了许多bug', '第十二次是计算器的3.0版。'];
+var homeworkcontent = ['第一次作业做的是熟练使用指令对gitbash实现基本操作，也了解到Linus系统', '第二次作业是下载videoClips文件到个人文件夹中，用linux命令解包、包文件、列出解包的文件并用浏览器播放解包的视频', '第三次作业是利用grep分类以及重定向符', '第四次作业是熟练运用ping grep cut等指令', '第五次作业是做了个简易的视频播放器', '第六次作业是输入秒数和视频序号，实现当前视频的进度跳转和视频跳转', '第七次作业是显示当前视频播放的时间创建动态div显示当前序列号和总视频数，遮住水印', '第八次作业是实现区域块视频，播放动态添加按钮', '第九次作业是设置全局变量', '第十次作业是音视频学习平台', '第十一次是考试，计算器补全了许多bug', '第十二次是计算器的3.0版。'];
 var homeworksrc = ['https://pengpengqifeng.github.io/pengqifeng/20197304-20230905.html', 'https://pengpengqifeng.github.io/pengqifeng/20197304-20230912.html', 'https://pengpengqifeng.github.io/pengqifeng/20197304-20230919.html', 'https://pengpengqifeng.github.io/pengqifeng/20197304-20230926.html', 'pengqifeng/20197304-20231010.html', 'pengqifeng/20197304-20231017.html', 'pengqifeng/20197304-20231024.html', 'pengqifeng/20197304-20231031.html', 'pengqifeng/20197304-20231107.html',
 'https://pengpengqifeng.github.io/pengqifeng/ks.html',
 'https://youzelian.github.io/10/pengqifeng/20197304-11.html',
