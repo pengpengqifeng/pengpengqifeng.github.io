@@ -69,9 +69,7 @@
 </body>
 
 <script>
-  /*****定义全局变量*****/
 
-          //开启同步代码
   var Model = {};
   Model.i = 0;
   Model.isVideo = true;
@@ -107,10 +105,10 @@
     }
     Model.UI.logoDom.textContent = "NO." + (i + 1) + "/" + length;
   }
-  // 2.3初始化 Model.i=0
+
   Model.showMediaNum(0);
 
-  // 展示时间进度条
+
   Model.showTimeUI = function () {
     let content;
     if (Model.isVideo) {
@@ -120,7 +118,7 @@
     }
     Model.UI.timeDom.textContent = content;
   };
-  // 切换媒体类型的函数
+
   Model.switchMediaDom = function () {
     if (Model.isVideo) {
       Model.UI.stageDom.removeChild(Model.UI.videoDom);
@@ -170,14 +168,14 @@
 
 
     window.setInterval(Model.showTimeUI, 1000);
-    // 定义向前按钮
+
 
     Model.UI.preDom.onclick = function () {
-      // 定义局部变量
+
       let i = Model.i;
       let length = null;
       let file = null;
-      // 判断是视频文件还是音频文件
+   
       if (Model.isVideo) {
         length = Model.UI.videoDom.videoLength;
         file = Model.UI.videoDom;
@@ -186,20 +184,20 @@
         length = Model.UI.audioDom.audioLength;
         file = Model.UI.audioDom;
       }
-      // 业务处理
+
       if (i == 0) {
         i = length - 1;
       }
       else {
         i--;
       }
-      // 2.4 — — — —每次切换视频需要更新目录内容
-      //Model.fileList(i);
+
+
       Model.i = i;
       file.src = file.getURL();
       file.play();
     }
-    // 定义播放按钮
+
     Model.UI.playDom.onclick = function () {
       if (Model.isVideo) {
         Model.UI.videoDom.play();
@@ -208,7 +206,7 @@
       }
 
     };
-    // 定义暂停按钮
+
     Model.UI.stopDom.onclick = function () {
 
       if (Model.isVideo) {
@@ -217,13 +215,13 @@
         Model.UI.audioDom.pause();
       }
     }
-    // 定义向后按钮
+
     Model.UI.nextDom.onclick = function () {
-      // 定义局部变量
+ 
       let i = Model.i;
       let length = null;
       let file = null;
-      // 判断是视频文件还是音频文件
+      
       if (Model.isVideo) {
         length = Model.UI.videoDom.videoLength;
         file = Model.UI.videoDom;
@@ -232,14 +230,14 @@
         length = Model.UI.audioDom.audioLength;
         file = Model.UI.audioDom;
       }
-      // 业务处理
+ 
       if (i == length - 1) {
         i = 0;
       }
       else {
         i++;
       }
-      // 2.4 — — — —每次切换视频需要更新目录内容
+
       Model.showMediaNum(i);
       Model.i = i;
       file.src = file.getURL();
@@ -248,7 +246,7 @@
 
 
 
-    // 切换媒体
+
     Model.UI.switchDom.onclick = function () {
 
       if (Model.isVideo) {
@@ -271,7 +269,7 @@
     };
 
 
-  }; //Model.init 结束
+  };
 
 
 
