@@ -8,16 +8,23 @@
   
   <meta charset="UTF-8">
 
-  <title>学习系统</title>
+  <title>音视频学习平台</title>
 
   <style type="text/css">
+    div img{
+      width:200px;
+      height:300px;
+    }
+    li{
+      font-size: 1.8vw;
+    }
     input{
       font-size:2em;
       padding:10px 5px;
     }
     /*設置input大小按鈕，邊框據*/
     p{
-      font-size:1.0em;
+      font-size:3.0em;
       background-color:navy;
       color:white;
     }
@@ -47,6 +54,16 @@
 <script src="ks.js"></script>
 <body>
 <p class="term-member">江西科技师范大学--21计算机2班--彭起峰</p>
+<div class="header-wrapper">
+  <img src="https://pengpengqifeng.github.io/Images/myFace1.jpg">
+  <img src="https://pengpengqifeng.github.io/pengqifeng/teacher.jpg">
+</div>
+
+<div class="nav-wrapper w clearfix">
+  <ul class="nav">
+    <li>学生：彭起峰</li>
+    <li>教师: 李健宏老师</li>
+  </ul>
 <div class="h1">
   <h1>音视频学习平台</h1>
 </div>
@@ -62,7 +79,7 @@
     <input type="button" value="暂停" class="pause" id="stop">
     <input type="button" value="上一个" class="pre" id="pre">
     <input type="button" value="下一个" class="next" id="next">
-    <input type="button" value="切换媒体" class="qh" id="switch">
+    <input type="button" value="媒体转换" class="qh" id="switch">
     <div class="num2" id="logo"></div>
   </div>
 </div>
