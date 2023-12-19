@@ -13,13 +13,6 @@ type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Freedom</title>
 <style>
-div img{
-width:100px;
-height:150px;
-    }
-li {
-font-size: 1.8vw;
-   }
 * {
 padding: 0;
 margin: 0;
@@ -103,18 +96,6 @@ margin-top: 50px;
 </head>
 
 <body>
-<div class="header-wrapper">
-   <img src="https://pengpengqifeng.github.io/pengqifeng/myFace2.jpg">
-   <img src="https://pengpengqifeng.github.io/pengqifeng/teacher.jpg">
-</div>
-
- <div class="nav-wrapper w clearfix">
-    <ul class="nav">
-        <li>学生：彭起峰</li>
-        <li>教师: 李健宏老师</li>
-    </ul>
- </div>
-
 <header>
 <div id="Header"></div>
 <img src="" id="Img">
@@ -129,8 +110,11 @@ margin-top: 50px;
 // 设置body的高度为电脑/手机的高度
 document.body.style.height = window.innerHeight + 'px';
 // 设置header部分的动态生成名人名言进行循环
-var saying = ['学无止境、言行一致', '学无止境、言行一致', '学无止境、言行一致'];
+var saying = ['学无止境、言行一致', '学习是一件很快乐的事情', '自由、情绪稳定、一言九鼎'];
 var header = document.getElementById("Header");
+    
+var imgsrc = ['https://ts1.cn.mm.bing.net/th/id/R-C.c57b8b63fd91345aca8b452052a896cb?rik=xwYkO9LfRHsTyg&riu=http%3a%2f%2fpic.zsucai.com%2ffiles%2f2013%2f0717%2fmhfj1.jpg&ehk=o2BjWsRBZg82tbJbXH9NwWJTOpAtVlyN9MwkMOubKvI%3d&risl=&pid=ImgRaw&r=0','https://ts1.cn.mm.bing.net/th/id/R-C.c57b8b63fd91345aca8b452052a896cb?rik=xwYkO9LfRHsTyg&riu=http%3a%2f%2fpic.zsucai.com%2ffiles%2f2013%2f0717%2fmhfj1.jpg&ehk=o2BjWsRBZg82tbJbXH9NwWJTOpAtVlyN9MwkMOubKvI%3d&risl=&pid=ImgRaw&r=0','https://ts1.cn.mm.bing.net/th/id/R-C.c57b8b63fd91345aca8b452052a896cb?rik=xwYkO9LfRHsTyg&riu=http%3a%2f%2fpic.zsucai.com%2ffiles%2f2013%2f0717%2fmhfj1.jpg&ehk=o2BjWsRBZg82tbJbXH9NwWJTOpAtVlyN9MwkMOubKvI%3d&risl=&pid=ImgRaw&r=0','https://ts1.cn.mm.bing.net/th/id/R-C.c57b8b63fd91345aca8b452052a896cb?rik=xwYkO9LfRHsTyg&riu=http%3a%2f%2fpic.zsucai.com%2ffiles%2f2013%2f0717%2fmhfj1.jpg&ehk=o2BjWsRBZg82tbJbXH9NwWJTOpAtVlyN9MwkMOubKvI%3d&risl=&pid=ImgRaw&r=0','https://ts1.cn.mm.bing.net/th/id/R-C.c57b8b63fd91345aca8b452052a896cb?rik=xwYkO9LfRHsTyg&riu=http%3a%2f%2fpic.zsucai.com%2ffiles%2f2013%2f0717%2fmhfj1.jpg&ehk=o2BjWsRBZg82tbJbXH9NwWJTOpAtVlyN9MwkMOubKvI%3d&risl=&pid=ImgRaw&r=0'];
+var img = document.getElementById('Img');
 
 var symbol = ['第一次作业', '第二次作业', '第三次作业', '第四次作业', '第五次作业', '第六次作业', '第七次作业', '第八次作业', '第九次作业', '音视频学习系统', '第十一次作业', '第十二次作业', '第十三次作业', '第十四次作业', '第十五次作业', '第十六次作业'];
 var nav = document.getElementById('Nav');
